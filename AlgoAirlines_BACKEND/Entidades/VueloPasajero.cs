@@ -7,7 +7,7 @@
         public int IdPasajero { get; set; }
 
         #region Relaciones
-        public virtual Vuelo Vuelo { get; set; }
+        public virtual Vuelo Vuelo { get; set; } 
         public virtual Pasajero Pasajero { get; set; }
         #endregion
     }
