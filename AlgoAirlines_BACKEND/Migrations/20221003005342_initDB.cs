@@ -16,7 +16,7 @@ namespace AlgoAirlines_BACKEND.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Ciudad = table.Column<int>(type: "int", nullable: false)
+                    Ciudad = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
