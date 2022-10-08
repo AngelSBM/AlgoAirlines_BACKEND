@@ -12,8 +12,7 @@ namespace AlgoAirlines_BACKEND.Servicios
         {
             this._unitOfWork = unidadDetrabajo;
         }
-
-
+        
         public IEnumerable<Aeropuerto> ObtenerAeropuertos()
         {
             return _unitOfWork.aeropuertoRepo.ObtenerTodos();
