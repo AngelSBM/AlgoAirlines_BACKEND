@@ -1,19 +1,20 @@
 ﻿using AlgoAirlines_BACKEND.DTO.Avion;
+using AlgoAirlines_BACKEND.DTO.Pasajero;
 using AlgoAirlines_BACKEND.Servicios.Abstracciones;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AlgoAirlines_BACKEND.Controllers
 {
     [ApiController]
-    [Route("Avion")]
-    public class AvionController : ControllerBase
+    [Route("Pasajero")]
+    public class PasajeroController : ControllerBase
     {
 
-        private readonly IAvionServicio _avionServicio;
+        private readonly IPasajeroServicio _pasajeroServicio;
 
-        public AvionController(IAvionServicio avionServicio)
+        public PasajeroController(IPasajeroServicio pasajeroServicio)
         {
-            this._avionServicio = avionServicio;
+            this._pasajeroServicio = pasajeroServicio;
         }
 
         [HttpGet]
@@ -21,7 +22,7 @@ namespace AlgoAirlines_BACKEND.Controllers
         {
             try
             {
-                var respuesta = _avionServicio.ObtenerAviones();
+                var respuesta = _pasajeroServicio.ObtenerPasajeros();
                 return Ok(respuesta);
             }
             catch (Exception e)
@@ -32,11 +33,11 @@ namespace AlgoAirlines_BACKEND.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(NuevoAvionDTO nuevoAvion)
+        public IActionResult Post(NuevoPasajeroDTO nuevoPasajero)
         {
             try
             {
-                var respuesta = _avionServicio.AgregarAvion(nuevoAvion);
+                var respuesta = _pasajeroServicio.CrearPasajero(nuevoPasajero);
                 return Ok(respuesta);
             }
             catch (Exception e)

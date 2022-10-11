@@ -1,7 +1,7 @@
 ﻿using AlgoAirlines_BACKEND.DTO.Vuelo;
 using AlgoAirlines_BACKEND.Entidades;
 
-namespace AlgoAirlines_BACKEND.Servicios
+namespace AlgoAirlines_BACKEND.Servicios.Abstracciones
 {
     public interface IVueloServicio
     {

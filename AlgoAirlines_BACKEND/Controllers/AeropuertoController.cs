@@ -1,6 +1,6 @@
 ﻿using AlgoAirlines_BACKEND.DTO.Aeropuerto;
 using AlgoAirlines_BACKEND.Entidades;
-using AlgoAirlines_BACKEND.Servicios;
+using AlgoAirlines_BACKEND.Servicios.Abstracciones;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AlgoAirlines_BACKEND.Controllers

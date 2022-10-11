@@ -1,6 +1,7 @@
 ﻿using AlgoAirlines_BACKEND.AccesoDatos.Abstracciones;
 using AlgoAirlines_BACKEND.DTO.Vuelo;
 using AlgoAirlines_BACKEND.Entidades;
+using AlgoAirlines_BACKEND.Servicios.Abstracciones;
 
 namespace AlgoAirlines_BACKEND.Servicios
 {

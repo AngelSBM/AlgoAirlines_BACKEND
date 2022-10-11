@@ -3,6 +3,7 @@ using AlgoAirlines_BACKEND.AccesoDatos.Abstracciones;
 using AlgoAirlines_BACKEND.AccesoDatos.Repositorios;
 using AlgoAirlines_BACKEND.Entidades;
 using AlgoAirlines_BACKEND.Servicios;
+using AlgoAirlines_BACKEND.Servicios.Abstracciones;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +28,7 @@ builder.Services.AddScoped<IRepositorio<Aeropuerto>, Repositorio<Aeropuerto>>();
 builder.Services.AddScoped<IAeropuertoServicio, AeropuertoServicio>();
 builder.Services.AddScoped<IAvionServicio, AvionServicio>();
 builder.Services.AddScoped<IVueloServicio, VueloServicio>();
+builder.Services.AddScoped<IPasajeroServicio, PasajeroServicio>();
 
 
 builder.Services.AddScoped<IUnitOfWork, UnidadDeTrabajo>();
