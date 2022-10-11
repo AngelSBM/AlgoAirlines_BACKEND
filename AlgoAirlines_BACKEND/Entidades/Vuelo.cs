@@ -7,7 +7,7 @@
         public int IdLugarLlegada { get; set; }
         public DateTime FechaSalida { get; set; }
         public DateTime FechaLlegada { get; set; }
-        public int IdAvion { get; set; }
+        public int AvionId { get; set; }
 
         #region Relaciones
         public virtual Avion Avion { get; set; }

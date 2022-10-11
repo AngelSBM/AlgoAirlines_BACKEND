@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AlgoAirlines_BACKEND.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221003005342_initDB")]
+    [Migration("20221011014848_initDB")]
     partial class initDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -141,9 +141,6 @@ namespace AlgoAirlines_BACKEND.Migrations
 
                     b.Property<DateTime>("FechaSalida")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("IdAvion")
-                        .HasColumnType("int");
 
                     b.Property<int>("IdLugarLlegada")
                         .HasColumnType("int");

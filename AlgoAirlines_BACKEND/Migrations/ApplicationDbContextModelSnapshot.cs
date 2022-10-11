@@ -140,9 +140,6 @@ namespace AlgoAirlines_BACKEND.Migrations
                     b.Property<DateTime>("FechaSalida")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("IdAvion")
-                        .HasColumnType("int");
-
                     b.Property<int>("IdLugarLlegada")
                         .HasColumnType("int");
 

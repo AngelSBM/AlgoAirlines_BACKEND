@@ -26,6 +26,7 @@ builder.Services.AddScoped<IRepositorio<Aeropuerto>, Repositorio<Aeropuerto>>();
 //SERVICIOS
 builder.Services.AddScoped<IAeropuertoServicio, AeropuertoServicio>();
 builder.Services.AddScoped<IAvionServicio, AvionServicio>();
+builder.Services.AddScoped<IVueloServicio, VueloServicio>();
 
 
 builder.Services.AddScoped<IUnitOfWork, UnidadDeTrabajo>();

@@ -80,7 +80,6 @@ namespace AlgoAirlines_BACKEND.Migrations
                     IdLugarLlegada = table.Column<int>(type: "int", nullable: false),
                     FechaSalida = table.Column<DateTime>(type: "datetime2", nullable: false),
                     FechaLlegada = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IdAvion = table.Column<int>(type: "int", nullable: false),
                     AvionId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
