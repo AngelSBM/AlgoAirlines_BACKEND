@@ -29,6 +29,7 @@ builder.Services.AddScoped<IAeropuertoServicio, AeropuertoServicio>();
 builder.Services.AddScoped<IAvionServicio, AvionServicio>();
 builder.Services.AddScoped<IVueloServicio, VueloServicio>();
 builder.Services.AddScoped<IPasajeroServicio, PasajeroServicio>();
+builder.Services.AddScoped<IOficialServicio, OficialServicio>();
 
 
 builder.Services.AddScoped<IUnitOfWork, UnidadDeTrabajo>();

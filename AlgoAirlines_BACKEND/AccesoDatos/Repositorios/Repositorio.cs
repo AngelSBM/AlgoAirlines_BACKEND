@@ -24,7 +24,7 @@ namespace AlgoAirlines_BACKEND.AccesoDatos.Repositorios
 
         public T BuscarPor(Expression<Func<T, bool>> expression)
         {
-            return _context.Set<T>().Where(expression).FirstOrDefault();
+            return _context.Set<T>().FirstOrDefault(expression);
         }
 
         public void Eliminar(T entidad)
