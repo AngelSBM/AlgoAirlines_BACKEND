@@ -45,5 +45,20 @@ namespace AlgoAirlines_BACKEND.Controllers
 
             }
         }
+
+        [HttpPost("Filtro")]
+        public IActionResult Filtro(VueloFiltroDTO filtro)
+        {
+            try
+            {
+                var respuesta = _vueloServicio.ObtenerVuelosFiltrados(filtro);
+                return Ok(respuesta);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+
+            }
+        }
     }
 }

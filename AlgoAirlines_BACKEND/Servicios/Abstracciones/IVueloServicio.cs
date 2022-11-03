@@ -7,6 +7,7 @@ namespace AlgoAirlines_BACKEND.Servicios.Abstracciones
     {
         public Vuelo CrearVuelo(NuevoVueloDTO nuevoVuelo);
         public List<Vuelo> ObtenerVuelos();
+        public List<VueloDTO> ObtenerVuelosFiltrados(VueloFiltroDTO filtros);
     }
 }
 

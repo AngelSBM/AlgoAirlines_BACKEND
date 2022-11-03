@@ -2,16 +2,19 @@
 using AlgoAirlines_BACKEND.DTO.Vuelo;
 using AlgoAirlines_BACKEND.Entidades;
 using AlgoAirlines_BACKEND.Servicios.Abstracciones;
+using AutoMapper;
 
 namespace AlgoAirlines_BACKEND.Servicios
 {
     public class VueloServicio : IVueloServicio
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public VueloServicio(IUnitOfWork unitOfWork)
+        public VueloServicio(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this._unitOfWork = unitOfWork;
+            this._mapper = mapper;
         }
 
         public Vuelo CrearVuelo(NuevoVueloDTO nuevoVuelo)
@@ -36,6 +39,37 @@ namespace AlgoAirlines_BACKEND.Servicios
             catch (Exception)
             {
                 throw new Exception("Algo salió mal, por favor contacte al departamento de TI");
+            }
+
+        }
+
+        public List<VueloDTO> ObtenerVuelosFiltrados(VueloFiltroDTO filtros)
+        {
+
+            try
+            {
+
+                var vuelos = _unitOfWork.vueloRepo.ObtenerVuelos().Where(vuelo =>
+                                                 (vuelo.IdLugarSalida == filtros.DesdeId && vuelo.IdLugarLlegada == filtros.HastaId
+                                                || vuelo.IdLugarSalida == filtros.HastaId && vuelo.IdLugarLlegada == filtros.DesdeId) &&
+                                                   vuelo.FechaSalida.DayOfYear == filtros.FechaDesde.DayOfYear || 
+                                                   vuelo.FechaSalida.DayOfYear == filtros.FechaHasta.DayOfYear).ToList();
+
+
+
+                var vuelosDto = new List<VueloDTO>();
+
+                foreach (var vuelo in vuelos)
+                {
+                    vuelosDto.Add(_mapper.Map<Vuelo, VueloDTO>(vuelo));
+                }
+
+                return vuelosDto;
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
             }
 
         }
