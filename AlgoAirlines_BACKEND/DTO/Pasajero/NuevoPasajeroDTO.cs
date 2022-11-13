@@ -7,6 +7,8 @@
         public string Cedula { get; set; }
         public string NumeroPasaporte { get; set; }
         public string Sexo { get; set; }
+        public int NumeroAsientoIda { get; set; }
+        public int NumeroAsientoVuelta { get; set; }
 
     }
 }

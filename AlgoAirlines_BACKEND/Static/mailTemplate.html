@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *,html{
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 25px;
+        }
+
+        .container{
+            width: 50%;
+            height: 50%;
+        }
+
+        .greetings{
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .message{
+            margin: 20px 0;
+        }
+
+        .go-flight{
+            margin: 20px 0;
+        }
+
+        .seats{
+            display: flex;
+        }
+
+        .seats-title{
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="greetings">¡Hola!</div>
+
+        <div class="message">
+            Aquí se le adjunta los tickets comprados en star airlines:
+        </div>
+
+        <div class="go-flight">
+            Vuelo no. {numeroVueloIda}
+            <div class="seats">
+                <div class="seats-title">Asientos: </div>
+                <span>{asientosIda}</span>
+            </div>
+            <div class="seats">
+                <div class="seats-title">Fecha: </div>
+                <span>{fechaIda}</span>
+            </div>
+        </div>
+
+        <div class="go-flight">
+            Vuelo no. {numeroVueloVuelta}
+            <div class="seats">
+                <div class="seats-title">Asientos: </div>
+                <span>{asientosVuelta}</span>
+            </div>
+            <div class="seats">
+                <div class="seats-title">Fecha: </div>
+                <span>{fechaVuelta}</span>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

@@ -9,7 +9,12 @@ namespace AlgoAirlines_BACKEND.AccesoDatos.Abstracciones
         public IRepositorio<Pasajero> pasajeroRepo { get; set; }
         public IVueloRepositorio vueloRepo { get; set; }
         public IRepositorio<VueloPasajero> vueloPasajeroRepo { get; set; }
+        public IRepositorio<Ticket> ticketRepo { get; set; }
         public IRepositorio<Oficial> oficialRepo { get; set; }
+        public void ComenzarTransaccion();
+        public void CompletarTransaccion();
+        public void CancelarTransaccion();
+
         public void Guardar();
     }
 }

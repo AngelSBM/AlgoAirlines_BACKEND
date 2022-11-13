@@ -11,6 +11,7 @@ namespace AlgoAirlines_BACKEND.AccesoDatos
         public IRepositorio<Pasajero> pasajeroRepo { get; set; }
         public IVueloRepositorio vueloRepo { get; set; }
         public IRepositorio<VueloPasajero> vueloPasajeroRepo { get; set; }
+        public IRepositorio<Ticket> ticketRepo { get; set; }
         public IRepositorio<Oficial> oficialRepo { get; set; }
 
         public UnidadDeTrabajo
@@ -21,7 +22,8 @@ namespace AlgoAirlines_BACKEND.AccesoDatos
                 IRepositorio<Avion> _avionRepo,
                 IVueloRepositorio _vueloRepo,
                 IRepositorio<Oficial> _oficialRepo,
-                IRepositorio<VueloPasajero> _vueloPasajeroRepo
+                IRepositorio<VueloPasajero> _vueloPasajeroRepo,
+                IRepositorio<Ticket> _ticketRepo
             )
         {
             this.context = _context;
@@ -30,13 +32,30 @@ namespace AlgoAirlines_BACKEND.AccesoDatos
             this.avionRepo = _avionRepo;
             this.vueloRepo = _vueloRepo;
             this.vueloPasajeroRepo = _vueloPasajeroRepo;
+            this.ticketRepo = _ticketRepo;
             this.oficialRepo = _oficialRepo;
+        }
+
+        public void ComenzarTransaccion()
+        {
+            context.Database.BeginTransaction();
+        }
+
+        public void CompletarTransaccion()
+        {
+            context.Database.CommitTransaction();
+        }
+
+        public void CancelarTransaccion()
+        {
+            context.Database.RollbackTransaction();
         }
 
         public void Guardar()
         {
             context.SaveChanges();
         }
+
 
     }
 }

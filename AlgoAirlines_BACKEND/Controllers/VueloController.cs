@@ -60,5 +60,67 @@ namespace AlgoAirlines_BACKEND.Controllers
 
             }
         }
+
+        [HttpGet("Tickets")]
+        public IActionResult Tickets()
+        {
+            try
+            {
+                var respuesta = _vueloServicio.ObtenerTickets();
+                return Ok(respuesta);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+
+            }
+        }
+
+
+        [HttpPost("Agendar")]
+        public IActionResult Agendar(CompraVueloDTO agenda)
+        {
+            try
+            {
+                var respuesta = _vueloServicio.AgendarVuelos(agenda);
+                return Ok(respuesta);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+
+            }
+        }
+
+        [HttpGet("Reservaciones")]
+        public IActionResult Reservaciones(int vueloId)
+        {
+            try
+            {
+                var respuesta = _vueloServicio.AsientosReservados(vueloId);
+                return Ok(respuesta);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+
+            }
+        }
+
+
+        //[HttpGet("EnviarCorreo")]
+        //public IActionResult EnviarCorreo(string to)
+        //{
+        //    try
+        //    {
+        //        _vueloServicio.EnviarEmail(to);
+        //        return Ok();
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return BadRequest(e.Message);
+
+        //    }
+        //}
     }
 }

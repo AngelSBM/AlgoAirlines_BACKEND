@@ -1,5 +1,6 @@
 ﻿using AlgoAirlines_BACKEND.DTO.Aeropuerto;
 using AlgoAirlines_BACKEND.DTO.Avion;
+using AlgoAirlines_BACKEND.DTO.Pasajero;
 using AlgoAirlines_BACKEND.DTO.Vuelo;
 using AlgoAirlines_BACKEND.Entidades;
 using AutoMapper;
@@ -14,6 +15,15 @@ namespace AlgoAirlines_BACKEND.Helpers
                 .ForMember(x => x.LugarSalida, options => options.MapFrom(MapearAeropuertoSalida))
                 .ForMember(x => x.LugarLlegada, options => options.MapFrom(MapearAeropuertoLlegada))
                 .ForMember(x => x.Avion, options => options.MapFrom(MapearAvion));
+
+            CreateMap<NuevoPasajeroDTO, Pasajero>().ReverseMap()
+                .ForMember(x => x.NumeroAsientoIda, options => options.Ignore());
+
+            CreateMap<NuevoPasajeroDTO, Pasajero>().ReverseMap()
+                .ForMember(x => x.NumeroAsientoVuelta, options => options.Ignore());
+
+
+            CreateMap<Aeropuerto, AeropuertoDTO>().ReverseMap();
 
         }
 

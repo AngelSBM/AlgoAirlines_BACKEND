@@ -9,6 +9,7 @@ namespace AlgoAirlines_BACKEND.AccesoDatos
         public DbSet<Aeropuerto> Aeropuertos { get; set; }
         public DbSet<Avion> Aviones { get; set; }
         public DbSet<Oficial> Oficiales { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
         public DbSet<VueloPasajero> VuelosPasajeros { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
@@ -65,6 +66,12 @@ namespace AlgoAirlines_BACKEND.AccesoDatos
                 vueloPasajero.HasOne(vp => vp.Vuelo)
                             .WithMany(vp => vp.VuelosPasajeros);
             });
+
+
+            //modelBuilder.Entity<Ticket>(ticket =>
+            //{
+            //    ticket.has
+            //});
         }
 
 

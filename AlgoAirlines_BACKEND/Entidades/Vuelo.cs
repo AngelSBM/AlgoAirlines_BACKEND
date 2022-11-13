@@ -8,6 +8,8 @@
         public DateTime FechaSalida { get; set; }
         public DateTime FechaLlegada { get; set; }
         public int AvionId { get; set; }
+        public Guid PublicId { get; set; }
+        public int Precio { get; set; }
 
         #region Relaciones
         public virtual Avion Avion { get; set; }

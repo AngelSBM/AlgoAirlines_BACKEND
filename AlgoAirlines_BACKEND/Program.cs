@@ -57,6 +57,7 @@ builder.Services.AddScoped<IVueloRepositorio, VueloRepositorio>();
 builder.Services.AddScoped<IRepositorio<Avion>, Repositorio<Avion>>();
 builder.Services.AddScoped<IRepositorio<VueloPasajero>, Repositorio<VueloPasajero>>();
 builder.Services.AddScoped<IRepositorio<Oficial>, Repositorio<Oficial>>();
+builder.Services.AddScoped<IRepositorio<Ticket>, Repositorio<Ticket>>();
 builder.Services.AddScoped<IRepositorio<Aeropuerto>, Repositorio<Aeropuerto>>();
 
 //SERVICIOS

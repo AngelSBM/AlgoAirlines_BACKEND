@@ -10,6 +10,8 @@ namespace AlgoAirlines_BACKEND.DTO.Vuelo
         public int Id { get; set; }
         public DateTime FechaSalida { get; set; }
         public DateTime FechaLlegada { get; set; }
+        public Guid? PublicId { get; set; }
+        public int? Precio { get; set; }
         public AvionDTO Avion { get; set; }
         public AeropuertoDTO LugarSalida { get; set; }
         public AeropuertoDTO LugarLlegada { get; set; }

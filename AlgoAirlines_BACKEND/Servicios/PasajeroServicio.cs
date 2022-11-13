@@ -20,7 +20,7 @@ namespace AlgoAirlines_BACKEND.Servicios
             pasajeroDB.Nombre = nuevoPasajero.Nombre;
             pasajeroDB.NumeroPasaporte = nuevoPasajero.NumeroPasaporte;
             pasajeroDB.Cedula = nuevoPasajero.Cedula;
-            pasajeroDB.Sexo = nuevoPasajero.Sexo;
+            //pasajeroDB.Sexo = nuevoPasajero.Sexo;
             pasajeroDB.FechaNacimiento = nuevoPasajero.FechaNacimiento;
 
             _unidadDeTrabajo.pasajeroRepo.Agregar(pasajeroDB);
