@@ -3,6 +3,7 @@ using AlgoAirlines_BACKEND.AccesoDatos.Abstracciones;
 using AlgoAirlines_BACKEND.AccesoDatos.Repositorios;
 using AlgoAirlines_BACKEND.Entidades;
 using AlgoAirlines_BACKEND.Helpers;
+using AlgoAirlines_BACKEND.Middleware;
 using AlgoAirlines_BACKEND.Servicios;
 using AlgoAirlines_BACKEND.Servicios.Abstracciones;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,8 @@ using Microsoft.Extensions.Options;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
 
 // Add services to the container.
 builder.Services.AddAutoMapper(typeof(MapperProfile));
@@ -74,6 +77,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(
        options => options.UseSqlServer("data source=DESKTOP-N128OIF\\SQLEXPRESS;initial catalog=Aerolinea;trusted_connection=true"));
 
 var app = builder.Build();
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -19,16 +19,19 @@ namespace AlgoAirlines_BACKEND.Controllers
         [Route("Login")]
         public IActionResult Login(LoginOficialDTO loginDto)
         {
-            try
-            {
-                var retorno = _oficialServicio.Login(loginDto);
-                return Ok(retorno);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-                throw;
-            }
+            var retorno = _oficialServicio.Login(loginDto);
+            return Ok(retorno);
+        }
+
+        [HttpPost]
+        [Route("Registrar")]
+        public IActionResult Registrar(RegisterUserDto registro)
+        {
+
+            _oficialServicio.Registrar(registro);
+            return Ok();
+
+
         }
     }
 }
